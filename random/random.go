@@ -48,9 +48,9 @@ func (r *Rand) PoissonInt64(lam float64) int64 {
 
 func (r *Rand) poissonMult(lam float64) int64 {
 	var X int64
-	var prod, U float64
+	U := 0.0
 	enlam := math.Exp(-lam)
-
+	prod := 1.0
 	for {
 		U = r.Float64()
 		prod *= U
